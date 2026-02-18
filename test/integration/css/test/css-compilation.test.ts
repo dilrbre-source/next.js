@@ -113,7 +113,7 @@ module.exports = {
               const sourceMapUrl =
                 /\/\*#\s*sourceMappingURL=(.+\.map)\s*\*\//.exec(cssContent)[1]
               const actualSourceMapUrl = stylesheetUrl.replace(
-                /[^/]+$/,
+                /(?<=^|\/)[^/?]+(?=$|\?)/,
                 sourceMapUrl
               )
 
